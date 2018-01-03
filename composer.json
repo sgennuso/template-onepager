@@ -1,0 +1,8 @@
+{
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "^2.4",
+        "ubiweb/template-starter": "dev-master",
+        "ubiweb/template-bedrock": "dev-master"
+    }
+}

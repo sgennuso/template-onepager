@@ -1,0 +1,54 @@
+# A template must be specified
+template: template-bedrock
+default_language: en
+languages:
+    - en
+
+site_title: Ubiweb
+site_description: We are your online partner, so you can keep doing what you do best for your business.
+
+ua_code: UA-57419359-1
+admin_email: info@ubiweb.ca
+
+# Not an actual menu,
+# just a list as a convenience in the template.
+onepagemenu:
+    - services
+    - about
+    - testimonials
+    - contact
+
+social:
+    facebook: https://www.facebook.com/ubiweb1/
+    twitter: https://twitter.com/ubiweb
+    linkedin: https://ca.linkedin.com/company/ubiweb
+    youtube: https://www.youtube.com/user/ubiweb
+    google: https://plus.google.com/107381435430037598028
+    instagram: https://www.instagram.com/ubiweb/
+
+business:
+    type: ProfessionalService
+    name: Ubiweb
+    tagline: Specialized in creating and getting your business noticed.
+    url: https://ubiweb.ca
+    logo: /logo.png
+    image: /ubiweb.jpg
+    description: Your local business' online partner.
+    address: 644 Courcelle St \#405|Montreal|QC|H4C 3C5
+    latitude: 45.4743734
+    longitude: -73.5947416
+    map: https://www.google.ca/maps/place/UbiWeb/@45.4743734,-73.5947416,17z/data=!4m12!1m6!3m5!1s0x4cc91098e0800695:0x4b422acd4324464d!2sUbiWeb!8m2!3d45.4743734!4d-73.5925529!3m4!1s0x4cc91098e0800695:0x4b422acd4324464d!8m2!3d45.4743734!4d-73.5925529
+    hours:
+      Monday: 00:00-23:59
+      Tuesday: 00:00-23:59
+      Wednesday: 00:00-23:59
+      Thursday: 00:00-23:59
+      Friday: 00:00-23:59
+      Saturday: 00:00-23:59
+      Sunday: 00:00-23:59
+    phone: +1(514) 788-4456
+    price: $
+    payment_types: mastercard|visa|american express|interact|cash
+    age: 5
+    email: info@ubiweb.ca
+    license: RBQ 5680-0535-01

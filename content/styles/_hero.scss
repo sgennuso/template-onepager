@@ -1,0 +1,29 @@
+.hero {
+
+  @include media-breakpoint-up(md) {
+    background-image: url('images/hero.1200x600.1x.jpg') !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url('images/hero.2400x1200.2x.jpg') !important;
+  }
+
+  &__caption {
+    h1 {
+      @include media-breakpoint-up(md) {
+        font-size: 4rem;
+      }
+      color: rgba($primary, 0.7);
+    }
+
+    h2 {
+      color: darken($primary, 10%);
+    }
+  }
+
+}
+
+body {
+  background: transparent url('images/hero.2400x1200.2x.jpg') no-repeat center center fixed;
+  background-size: cover;
+}

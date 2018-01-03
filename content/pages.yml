@@ -1,0 +1,3 @@
+# Routes. The key is the URI,
+# and the value is the view (and route) name.
+/: home

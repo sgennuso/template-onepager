@@ -1,0 +1,7 @@
+.section {
+  background-color: rgba($dark, 0.9);
+
+  &--light {
+    background-color: $light;
+  }
+}

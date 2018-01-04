@@ -61,6 +61,31 @@
     </div>
   </section>
 
+  <aside class="section section--light">
+    <h1>Facebook</h1>
+    @if( $feed = $site->display()->socialFeed('facebook', [
+      'fields' => 'permalink_url,created_time,full_picture,message,caption',
+      'limit' => 10,
+      'limit' => 10,
+    ]) )
+    <div class="feed">
+      @foreach( $feed as $item )
+        @if( isset($item['full_picture']) )
+        <a class="feed__item" href="{{ $item['permalink_url'] }}">
+          <span class="feed__caption">
+            @if( isset($item['caption']) )
+            <span>{{ $item['caption'] }}</span>
+            @endif
+            <span class="feed__time">{{ $item['created_time'] }}</span>
+          </span>
+          <img src="{{ $item['full_picture'] }}" alt="{{ $item['caption'] ?? null }}"/>
+        </a>
+        @endif
+      @endforeach
+    </div>
+    @endif
+  </aside>
+
   <div class="py-5" id="testimonials">
 		<div class="container">
 			@component("components.slider", ['site' => $site,

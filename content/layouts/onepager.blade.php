@@ -7,7 +7,7 @@
 	<body id="page">
 
 		<header class="site-header" id="header">
-		  @component("components.navbar", ['site' => $site, 'class' => 'navbar-dark bg-dark'])
+		  @component("components.navbar", ['site' => $site, 'class' => 'navbar-dark'])
 		  <div class="container">
 		    <a class="navbar-brand" href="{{ $site->url('home') }}" data-scroll-to="page" data-scroll-to-offset="header">
 					{{ $site->global('site_title') }}

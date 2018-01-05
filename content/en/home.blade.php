@@ -27,104 +27,92 @@
 	</a>
 	@endcomponent
 
+  @if( $services = $site->global('services') )
   <section id="services" class="section section--light py-5">
     <div class="container">
-      <h1 class="section__title">Services</h1>
+      <h1 class="section__title my-2"><span>{{ $site->trans('Services') }}</span></h1>
       <ul class="grid grid--md-3 services">
-        <li class="service">
-          <i class="fa fa-certificate"></i>
-          <h3>Service 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+        @foreach( $services as $service )
+        <li class="service p-2">
+          <span class="icon-circle icon-circle--dark"><i class="fa fa-{{ $service['icon'] }}"></i></span>
+          <h3 class="mt-2">{{ $service['name'] }}</h3>
+          <p>{{ $service['description'] }}</p>
         </li>
-        <li class="service">
-          <i class="fa fa-certificate"></i>
-          <h3>Service 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-        </li>
-        <li class="service">
-          <i class="fa fa-certificate"></i>
-          <h3>Service 3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-        </li>
+        @endforeach
       </ul>
     </div>
   </section>
+  @endif
 
   <section id="about" class="section text-center py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-12 col-lg-8">
-          <h1 class="section__title">About</h1>
+          <h1 class="section__title"><span>{{ $site->trans('About') }}</span></h1>
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <aside class="section section--light">
-    <h1>Facebook</h1>
-    @if( $feed = $site->display()->socialFeed('facebook', [
-      'fields' => 'permalink_url,created_time,full_picture,message,caption',
-      'limit' => 10,
-      'limit' => 10,
-    ]) )
-    <div class="feed">
-      @foreach( $feed as $item )
-        @if( isset($item['full_picture']) )
-        <a class="feed__item" href="{{ $item['permalink_url'] }}">
-          <span class="feed__caption">
-            @if( isset($item['caption']) )
-            <span>{{ $item['caption'] }}</span>
-            @endif
-            <span class="feed__time">{{ $item['created_time'] }}</span>
-          </span>
-          <img src="{{ $item['full_picture'] }}" alt="{{ $item['caption'] ?? null }}"/>
-        </a>
-        @endif
-      @endforeach
-    </div>
-    @endif
-  </aside>
-
+  @if( $testimonials = $site->global('testimonials') )
   <div class="py-5" id="testimonials">
 		<div class="container">
 			@component("components.slider", ['site' => $site,
 				'id' => 'testimonials',
 				'data' => 	['interval' => 2000],
 			])
-			<div class="carousel-item active">
+      @foreach($testimonials as $testimonial)
+			<div class="carousel-item {{ $loop->first ? ' active' : null }}">
 				<blockquote class="row justify-content-between">
           <div class="col-sm-2">
-            <img class="img-fluid rounded-circle" src="http://i.pravatar.cc/400">
+            <img class="img-fluid rounded-circle" src="{{ isset($testimonial['image']) ? $site->asset($testimonial['image']) : $site->asset( 'images/testimonials/' . str_replace(' ', '-', strtolower($testimonial['name'])) . '.jpg' ) }}">
           </div>
           <div class="col-sm-9">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-            <p class="text-right"><small>John Smith</small></p>
+            <p>{{ $testimonial['quote'] }}</p>
+            <p class="text-right"><small>{{ $testimonial['name'] }}</small></p>
           </div>
 				</blockquote>
 			</div>
-			<div class="carousel-item">
-        <blockquote class="row justify-content-between">
-          <div class="col-sm-2">
-            <img class="img-fluid rounded-circle" src="http://i.pravatar.cc/400">
-          </div>
-          <div class="col-sm-9">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-            <p class="text-right"><small>John Smith</small></p>
-          </div>
-				</blockquote>
-			</div>
+      @endforeach
       <ol class="carousel-indicators">
-        <li data-target="#testimonials" data-slide-to="0" class="active"></li>
-        <li data-target="#testimonials" data-slide-to="1"></li>
+        @foreach($testimonials as $testimonial)
+        <li data-target="#testimonials" data-slide-to="0"{!! $loop->first ? ' class="active"' : null !!}></li>
+        @endforeach
       </ol>
 			@endcomponent
 		</div>
 	</div>
+  @endif
+
+  @if( $feed = $site->display()->socialFeed('facebook', [
+    'fields' => 'permalink_url,created_time,full_picture,message,caption',
+    'limit' => 10,
+    'limit' => 10,
+    ]) )
+  <aside class="section">
+    <h1 class="section__title my-2"><span>{{ $site->trans('Facebook') }}</span></h1>
+    <div class="feed">
+      @foreach( $feed as $item )
+        @if( isset($item['full_picture']) )
+        <a class="feed__item" href="{{ $item['permalink_url'] }}" target="_blank">
+          <span class="feed__caption">
+            @if( isset($item['caption']) )
+            <span>{{ $item['caption'] }}</span>
+            @endif
+            <span class="feed__time">{{ date('F j, Y', strtotime($item['created_time'])) }}</span>
+          </span>
+          <img src="{{ $item['full_picture'] }}" alt="{{ $item['caption'] ?? null }}"/>
+        </a>
+        @endif
+      @endforeach
+    </div>
+  </aside>
+  @endif
 
   <div id="contact" class="section section--light py-5">
       <div class="container">
-          <h1 class="section__title">{{ $site->trans('Contact') }}</h1>
+          <h1 class="section__title"><span>{{ $site->trans('Contact') }}</span></h1>
           <div class="row">
               <div class="col-md-6">
                   @if( isset($site->global()->business->address) )

@@ -10,14 +10,6 @@ site_description: We are your online partner, so you can keep doing what you do 
 ua_code: UA-57419359-1
 admin_email: info@ubiweb.ca
 
-# Not an actual menu,
-# just a list as a convenience in the template.
-onepagemenu:
-    - services
-    - about
-    - testimonials
-    - contact
-
 social:
     facebook: https://www.facebook.com/ubiweb1/
     twitter: https://twitter.com/ubiweb
@@ -52,3 +44,29 @@ business:
     age: 5
     email: info@ubiweb.ca
     license: RBQ 5680-0535-01
+
+# Not an actual menu,
+# just a list as a convenience in the template.
+onepagemenu:
+    - services
+    - about
+    - testimonials
+    - contact
+
+# Some data for the template
+services:
+    - name: Service 1
+      icon: cutlery
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    - name: Service 2
+      icon: car
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    - name: Service 3
+      icon: bullhorn
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+
+testimonials:
+    - name: John Doe
+      quote: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+    - name: Jane Smith
+      quote: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

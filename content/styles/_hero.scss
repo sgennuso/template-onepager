@@ -1,8 +1,10 @@
 #page {
   .hero {
+    min-height: 100vh;
 
     @include media-breakpoint-up(md) {
       background-image: url('images/hero.1200x600.1x.jpg') !important;
+      min-height: 0;
       height: 60vh;
     }
 

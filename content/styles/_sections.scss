@@ -1,7 +1,24 @@
 .section {
   background-color: rgba($dark, 0.9);
+  overflow: hidden;
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    span {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid $light;
+      border-top: 1px solid $light;
+    }
+  }
 
   &--light {
     background-color: $light;
+    .section__title span {
+      border-color: $dark;
+    }
   }
+
 }

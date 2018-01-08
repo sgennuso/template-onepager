@@ -2657,7 +2657,7 @@ tbody.collapse.show {
 
 .nav-link {
   display: block;
-  padding: 2rem 1rem; }
+  padding: 1.5rem 1rem; }
   .nav-link:focus {
     text-decoration: none; }
   .nav-link:hover {
@@ -2728,8 +2728,8 @@ tbody.collapse.show {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 1.8125rem;
-  padding-bottom: 1.8125rem;
+  padding-top: 1.3125rem;
+  padding-bottom: 1.3125rem;
   margin-right: 2rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -2754,8 +2754,8 @@ tbody.collapse.show {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 2rem;
-  padding-bottom: 2rem; }
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
 
 .navbar-collapse {
   flex-basis: 100%;
@@ -9272,5 +9272,14 @@ body {
 
 .navbar {
   background-color: rgba(8, 29, 32, 0.9); }
+
+#page .navbar-nav .nav-link {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 9999px; }
+  #page .navbar-nav .nav-link.active {
+    background-color: #2594a0; }
 
 /*# sourceMappingURL=main.css.map */

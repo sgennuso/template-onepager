@@ -10,7 +10,7 @@
 		  @component("components.navbar", ['site' => $site, 'class' => 'navbar-dark'])
 		  <div class="container">
 		    <a class="navbar-brand" href="{{ $site->url('home') }}" data-scroll-to="page" data-scroll-to-offset="header">
-					{{ $site->global('site_title') }}
+					<img height="35" alt="{{ $site->global('site_title') }}" src="{{ $site->asset('images/logo.png') }}" />
 				</a>
 
 				<div class="navbar-utility order-0 order-md-9">
@@ -32,7 +32,7 @@
           <ul class="navbar-nav">
 						@foreach( $site->global('onepagemenu') as $item )
             <li class="nav-item">
-              <a href="#{{ $item }}" class="nav-link" data-scroll-to="{{ $item }}" data-scroll-to-offset="header">
+              <a href="#{{ $item }}" class="nav-link" data-scroll-to="{{ $item }}">
 								{{ ucfirst($site->trans($item)) }}
               </a>
             </li>

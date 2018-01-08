@@ -28,7 +28,7 @@
 	@endcomponent
 
   @if( $services = $site->global('services') )
-  <section id="services" class="section section--light py-5">
+  <section id="services" class="section section--light py-5" data-in-view="header">
     <div class="container">
       <h1 class="section__title my-2"><span>{{ $site->trans('Services') }}</span></h1>
       <ul class="grid grid--md-3 services">
@@ -44,7 +44,7 @@
   </section>
   @endif
 
-  <section id="about" class="section text-center py-5">
+  <section id="about" class="section text-center py-5" data-in-view="header">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-12 col-lg-8">
@@ -56,7 +56,7 @@
   </section>
 
   @if( $testimonials = $site->global('testimonials') )
-  <div class="py-5" id="testimonials">
+  <div class="py-5" id="testimonials" data-in-view="header">
 		<div class="container">
 			@component("components.slider", ['site' => $site,
 				'id' => 'testimonials',
@@ -110,7 +110,7 @@
   </aside>
   @endif
 
-  <div id="contact" class="section section--light py-5">
+  <div id="contact" class="section section--light py-5" data-in-view="header">
       <div class="container">
           <h1 class="section__title"><span>{{ $site->trans('Contact') }}</span></h1>
           <div class="row">

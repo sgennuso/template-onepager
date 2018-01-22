@@ -1,8 +1,32 @@
 {
+    "name": "ubiweb/template-onepager",
+    "license": "MIT",
+    "description": "Template for making microsites. ",
+    "homepage": "https://github.com/ubiweb-media/template-bedrock",
     "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Greg Hunt",
+            "email": "greg@codecomment.io",
+            "homepage": "https://codecomment.io"
+        }
+    ],
+    "keywords": [
+        "ubiweb",
+        "blade",
+        "template"
+    ],
+    "support": {
+        "issues": "https://github.com/ubiweb-media/template-onepager/issues"
+    },
     "require": {
         "vlucas/phpdotenv": "^2.4",
-        "ubiweb/template-starter": "dev-master",
         "ubiweb/template-bedrock": "dev-master"
-    }
+    },
+    "repositories": [
+        {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+        }
+    ]
 }

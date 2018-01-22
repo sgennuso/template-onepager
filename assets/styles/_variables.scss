@@ -1,9 +1,9 @@
-$dark: #081d20;
-$light: #ced9d1;
-$primary: #2594a0;
-$secondary: #5ebbce;
+$dark: #081d20 !default;
+$light: #ced9d1 !default;
+$primary: #2594a0 !default;
+$secondary: #5ebbce !default;
 
-$enable-rounded: true;
-$btn-border-radius: 9999px;
+$enable-rounded: true !default;
+$btn-border-radius: 9999px !default;
 
-$nav-link-padding-y: 1.5rem;
+$nav-link-padding-y: 1.5rem !default;

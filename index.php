@@ -4,19 +4,20 @@
 require  __DIR__ . '/vendor/autoload.php';
 
 // Load Environment
-if (!isset($_SERVER['CORE_PATH'])) {
+if (file_exists(__DIR__ . '/.env')) {
   $dotenv = new \Dotenv\Dotenv(__DIR__);
   $dotenv->load();
 }
-$corePath = getenv('CORE_PATH');
 
-// Load Ubiweb Core
-require $corePath . '/bootstrap.php';
+if( $corePath = getenv('CORE_PATH') ) {
 
-// Instantiate App
-$app = new Ubiweb\Site(__DIR__);
+    // Load Ubiweb Core
+    require $corePath . '/bootstrap.php';
 
-// Only Needed for demo
-// require __DIR__ . '/app/routes.php';
+    // Instantiate App
+    $app = new Ubiweb\Site(__DIR__);
+    $app->run();
 
-$app->run();
+} else {
+    echo "Core path is not defined.";
+}

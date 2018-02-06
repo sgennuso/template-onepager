@@ -1,6 +1,6 @@
 # A template must be specified
 template: template-bedrock
-default_language: en
+# default_language: en
 languages:
     - en
 

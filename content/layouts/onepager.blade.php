@@ -61,7 +61,7 @@
 		  element: $('#header')
 		});
 		</script>
-		<script src="{{ $site->asset('scripts/template.js', true) }}"></script>
+		<script src="{{ $site->asset('scripts/template.js') }}"></script>
 		@yield('foot')
 
 		@stack('scripts')

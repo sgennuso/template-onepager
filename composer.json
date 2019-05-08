@@ -20,7 +20,6 @@
         "issues": "https://github.com/ubiweb-media/template-onepager/issues"
     },
     "require": {
-        "vlucas/phpdotenv": "^2.4",
         "ubiweb/template-bedrock": "dev-master"
     },
     "repositories": [
